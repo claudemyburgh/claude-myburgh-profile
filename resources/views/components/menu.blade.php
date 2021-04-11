@@ -17,7 +17,7 @@
                                     <small>Hart is where the home is</small>
                                 </li>
                                 <li>
-                                    <a class="gradient-text {{ request()->is('blog*') ? ' active' : null}}" href="{{ route('blog.index') }}">Blog</a>
+                                    <a class="gradient-text {{ request()->is('post*') ? ' active' : null}}" href="{{ route('posts.index') }}">Blog</a>
                                     <small>Here we talk about development and more.</small>
                                 </li>
                                 <li>

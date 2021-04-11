@@ -11119,6 +11119,15 @@ a.btn.btn--md {
   filter: url(#wave);
 }
 
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: 100px;
+}
+
 .hero {
   position: relative;
   min-height: 100vh;

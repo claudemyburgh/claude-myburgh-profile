@@ -7,24 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Blog extends Model
+class Post extends Model
 {
     use HasFactory, Sluggable;
 
     protected $fillable = [
         'title',
-        'user_id',
+        'description',
         'slug',
         'content'
     ];
-
-    /**
-     * @return string
-     */
-    public function slugFrom(): string
-    {
-        return 'title';
-    }
 
     /**
      * @return BelongsTo
@@ -35,5 +27,17 @@ class Blog extends Model
     }
 
 
+    /**
+     * @return string
+     */
+    public function slugFrom(): string
+    {
+        return 'title';
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
 }

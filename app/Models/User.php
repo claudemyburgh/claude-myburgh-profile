@@ -49,9 +49,12 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
         'email_verified_at' => 'datetime',
     ];
 
-    public function blogs(): HasMany
+    /**
+     * @return HasMany
+     */
+    public function posts(): HasMany
     {
-        return $this->hasMany(Blog::class);
+        return $this->hasMany(Post::class);
     }
 
 }

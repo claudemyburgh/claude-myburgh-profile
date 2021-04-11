@@ -1,5 +1,5 @@
 <section class="hero flex flex--center">
-    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+
     <div class="wrapper">
         <div class="row flex flex--center">
             <div class="xs-col-9 md-col-7">

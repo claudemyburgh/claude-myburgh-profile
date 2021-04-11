@@ -12,7 +12,7 @@ return [
     | If you add Email verification "verified", "password.confirm" just remember to add the necessary adjustments.
     | docs: https://laravel.com/docs/8.x/verification#model-preparation
     */
-    'middleware' => ['verified'],
+    'middleware' => [],
 
     /*
      |--------------------------------------------------------------------------
@@ -90,7 +90,16 @@ return [
     | Add additional sessions for sentinel backend.
     |
     */
-    'status' => \DesignByCode\Guardian\Guardian::STATUS_CODES,
+    'status' => array_merge(\DesignByCode\Guardian\Guardian::STATUS_CODES, [
+        'post-updated-success' => [
+            'type' => 'success',
+            'message' => 'Post successfully updated.',
+        ],
+        'post-created-success' => [
+            'type' => 'success',
+            'message' => 'Post successfully created.',
+        ],
+    ])
 
 
 ];

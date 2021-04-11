@@ -2,18 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Blog;
-use App\Models\User;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BlogFactory extends Factory
+class PostFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Blog::class;
+    protected $model = Post::class;
 
     /**
      * Define the model's default state.
@@ -22,14 +21,8 @@ class BlogFactory extends Factory
      */
     public function definition()
     {
-
-        $user = User::first();
-
         return [
-            'title' => $this->faker->name(),
-            'content' => $this->faker->paragraph(30),
-            'user_id' => 1
-//            'live' => true
+            //
         ];
     }
 }
