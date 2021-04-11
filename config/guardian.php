@@ -12,7 +12,7 @@ return [
     | If you add Email verification "verified", "password.confirm" just remember to add the necessary adjustments.
     | docs: https://laravel.com/docs/8.x/verification#model-preparation
     */
-    'middleware' => [],
+    'middleware' => ['verified'],
 
     /*
      |--------------------------------------------------------------------------
