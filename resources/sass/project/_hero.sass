@@ -1,0 +1,80 @@
+.hero
+    position: relative
+    min-height: 100vh
+    background: url("/img/hero-bg.svg"), var(--dark-color)
+    background-size: 72% 72%, 100px 100px
+    background-position: left center
+    background-repeat: no-repeat
+    overflow: hidden
+
+    &-canvas
+        position: fixed
+        pointer-events: none
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: transparent
+        z-index: 1
+
+
+    & h1
+        margin: 0 0 15px 0
+        font-size: 42px
+        filter: drop-shadow(2px 2px 2px rgba(0,0,0,.75))
+    & h3
+        margin: 0
+        font-size: 36px
+        filter: drop-shadow(2px 2px 2px rgba(0,0,0,.75))
+    & .big
+        font-weight: 900
+        font-size: clamp(36px, 13vw, 135px)
+        line-height: 0.8
+        margin: 0
+        padding-bottom: 25px
+        filter: drop-shadow(4px 4px 4px rgba(0,0,0,.5))
+
+    &__box
+        position: absolute
+        display: block
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        border-radius: 30px
+        filter: drop-shadow(10px 10px 10px rgba(0,0,0,.35))
+        //background: var(--quad-color)
+
+        &:nth-child(1)
+            background-image: linear-gradient(to left, color('tri'), color('quad'))
+            transform: translate(20%, 30%) translateZ(-100px)
+
+        &:nth-child(2)
+            transform: translateZ(0px)
+            background-image: linear-gradient(to left, color('primary'), color('secondary'))
+
+        &:nth-child(3)
+            transform: translate(-10%, -10%) translateZ(100px)
+            position: relative
+            overflow: hidden
+            width: 80%
+            height: 80%
+            img
+                width: 100%
+                transform: rotate(90deg)
+
+        &__outer
+
+            transform: rotate(320deg)
+
+
+        &__wrapper
+            position: relative
+            transform: perspective(800px)
+            transform-style: preserve-3d
+            width: 200px
+            height: 200px
+            //background: hotpink
+            +media-up(md)
+                width: 300px
+                height: 300px

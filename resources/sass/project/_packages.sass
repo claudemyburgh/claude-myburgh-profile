@@ -1,0 +1,25 @@
+
+
+.package
+    transition: all 0.25s ease
+
+    & .panel__body
+        background: var(--dark-color)
+
+    &__header
+        padding: var(--global-padding)
+        display: flex
+        flex-wrap: nowrap
+
+    &__avatar
+        width: 35px
+
+    &__ellipsis
+        width: calc(100% - 35px)
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+    &__badges
+        padding: var(--global-padding)
+

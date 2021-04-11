@@ -1,0 +1,31 @@
+
+.split-panel
+    position: relative
+    transition: all 0.15s ease-in-out
+    transform-origin: bottom
+    &::before
+        position: absolute
+        transform-origin: right bottom
+        transition: all 0.15s ease
+        width: 100%
+        height: 100%
+        content: ''
+        display: block
+        background: linear-gradient(to bottom, color('primary'), color('secondary'))
+        border: solid 2px var(--primary-color)
+        z-index: -1
+        +radius(4px)
+
+    & .panel__body,
+    & .panel__header,
+    & .panel__footer
+        background: var(--dark-color)
+
+    &:hover
+        transform: scale(1.01) translateZ(30px)
+        z-index: 5
+        & .panel__body
+            box-shadow: rgba(#000, 0.37) 10px 10px 10px
+        &::before
+            transform: translate(10px, 20px) rotate(3deg) translateZ(-30px) scale(0.95)
+            z-index: -1
