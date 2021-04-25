@@ -12,8 +12,6 @@
     <x-menu></x-menu>
     {{ $slot }}
     <canvas id="hero-canvas" class="hero-canvas"></canvas>
-
-
     <svg>
         <defs>
             <filter id="wave">

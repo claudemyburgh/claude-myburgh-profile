@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\PostsRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -15,25 +16,20 @@ class PostsAdminController extends Controller
     }
 
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Post $posts)
+    public function index()
     {
-        $posts = $posts->with('user')->paginate();
-
-        return view('dashboard.posts.index', compact('posts'));
+        abort(404);
     }
 
 
     /**
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function create()
+    public function create(Post $posts)
     {
-        return view('dashboard.posts.create');
+        $posts = $posts->with('user')->paginate();
+
+        return view('dashboard.posts.create', compact('posts'));
     }
 
 
@@ -43,7 +39,7 @@ class PostsAdminController extends Controller
      */
     public function store(PostsRequest $request)
     {
-        $post = $request->user()->posts()->create($request->only('title', 'description', 'content'));
+        $post = $request->user()->posts()->create($request->validated());
         return redirect()->route('dashboard.posts.edit', $post)->withStatus('post-created-success');
     }
 
@@ -55,7 +51,7 @@ class PostsAdminController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
 

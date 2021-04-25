@@ -29,3 +29,30 @@
         &::before
             transform: translate(10px, 20px) rotate(3deg) translateZ(-30px) scale(0.95)
             z-index: -1
+
+.panel
+    &__thumb
+        position: relative
+        transform: rotate(5deg)
+
+        img
+            width: 120px
+            height: 120px
+            display: block
+
+        &::before
+            position: absolute
+            transform-origin: right bottom
+            transition: all 0.15s ease
+            width: 120px
+            height: 120px
+            content: ''
+            display: block
+            background: linear-gradient(to bottom, color('tri'), color('quad'))
+            transform: translate(5px, 10px) rotate(3deg) translateZ(-10px) scale(0.95)
+            border: solid 2px var(--tri-color)
+            z-index: -1
+            +radius(4px)
+
+    &__left
+        flex-basis: calc(100% - 160px)

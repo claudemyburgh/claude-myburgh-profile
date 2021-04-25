@@ -28,10 +28,15 @@ Route::get('tips/{tip}', [\App\Http\Controllers\TipsController::class, 'show'])
 Route::guardian();
 
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function() {
-    Route::resource('posts', \App\Http\Controllers\PostsAdminController::class);
-    Route::resource('tuts', \App\Http\Controllers\TutsAdminController::class);
-    Route::post('tuts-upload/{tut}', [\App\Http\Controllers\TutImageUploadController::class, 'upload'])
+    Route::resource('posts', \App\Http\Controllers\Admin\PostsAdminController::class);
+
+    Route::resource('tips', \App\Http\Controllers\TutsAdminController::class);
+
+    Route::resource('packages', \App\Http\Controllers\Admin\PackageController::class);
+
+    Route::post('tips-upload/{tut}', [\App\Http\Controllers\TutImageUploadController::class, 'upload'])
         ->name('tuts.upload');
-    Route::delete('tuts-upload/{media}', [\App\Http\Controllers\TutImageUploadController::class, 'destroy'])
+
+    Route::delete('tips-upload/{media}', [\App\Http\Controllers\TutImageUploadController::class, 'destroy'])
         ->name('tuts.delete');
 });

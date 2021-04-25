@@ -3,11 +3,9 @@
 
         <div class="row flex">
             <div class="xs-col-6  md-col-2 relative">
-                <div class="sticky">
-                    <img style="max-width: 100%" src="{{ asset('img/claude.svg') }}" alt="Claude Cartoon">
-                </div>
+                <x-left-sidebar></x-left-sidebar>
             </div>
-            <div class="md-col-8">
+            <div class="md-col-7">
                 <h1>Blog</h1>
                 @foreach($posts as $post)
                     <div class="panel split-panel mb-6">
@@ -24,6 +22,9 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="md-col-3 relative">
+                <x-ad-sidebar></x-ad-sidebar>
             </div>
         </div>
     </div>

@@ -21,11 +21,13 @@ class TutsAdminController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        return view('dashboard.tuts.create');
+        return view('dashboard.tuts.create', [
+            'tips' => Tut::get()
+        ]);
     }
 
     /**
@@ -38,7 +40,7 @@ class TutsAdminController extends Controller
     {
         $tut = $request->user()->tuts()->create($request->only('title', 'description'));
 
-        return redirect()->route('dashboard.tuts.edit', $tut)->withStatus('tut-successfully-created');
+        return redirect()->route('dashboard.tips.edit', $tut)->withStatus('tut-successfully-created');
     }
 
     /**
@@ -55,25 +57,25 @@ class TutsAdminController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * @param Tut $tut
+     * @param Tut $tip
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Tut $tut)
+    public function edit(Tut $tip)
     {
-        $tut = $tut->load('media');
-        return view('dashboard.tuts.edit', compact('tut'));
+        $tip = $tip->load('media');
+        return view('dashboard.tuts.edit', compact('tip'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param Tut $tut
+     * @param Tut $tip
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Tut $tut)
+    public function update(TutRequest $request,Tut $tip)
     {
-        $tut->update($request->only('title', 'description'));
+        $tip->update($request->validated());
 
         return redirect()->back()->withStatus('tut-successfully-updated');
     }

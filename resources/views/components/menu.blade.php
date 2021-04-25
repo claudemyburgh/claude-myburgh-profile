@@ -21,6 +21,10 @@
                                     <small>Here we talk about development and more.</small>
                                 </li>
                                 <li>
+                                    <a class="gradient-text {{ request()->is('tips*') ? ' active' : null}}" href="{{ route('tips.index') }}">Coding Tips</a>
+                                    <small>Flash cards with some random tips and tricks. </small>
+                                </li>
+                                <li>
                                     <a class="gradient-text {{ request()->routeIs('about') ? ' active' : null}}" href="{{ route('about') }}">ABOUT ME</a>
                                     <small>Where you can find out what i am up to.</small>
                                 </li>

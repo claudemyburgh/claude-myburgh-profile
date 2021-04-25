@@ -15,24 +15,28 @@
     <x-guardian-fixed-flash></x-guardian-fixed-flash>
     <div class="grid">
         <x-guardian-sidebar-nav>
-            <x-guardian-sidebar-nav-button href="{{ route('dashboard.posts.index') }}">
-                <x-slot name="icon">
-                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
-                </x-slot>
-                List Post
-            </x-guardian-sidebar-nav-button>
+
             <x-guardian-sidebar-nav-button href="{{ route('dashboard.posts.create') }}">
                 <x-slot name="icon">
                     <svg  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
                 </x-slot>
-                Create Post
+                Posts
             </x-guardian-sidebar-nav-button>
-            <x-guardian-sidebar-nav-button href="{{ route('dashboard.tuts.create') }}">
+
+            <x-guardian-sidebar-nav-button href="{{ route('dashboard.tips.create') }}">
                 <x-slot name="icon">
                     <svg  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
                 </x-slot>
-                Create Tut
+                Tips
             </x-guardian-sidebar-nav-button>
+
+            <x-guardian-sidebar-nav-button href="{{ route('dashboard.packages.create') }}">
+                <x-slot name="icon">
+                    <svg  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"></path></svg>
+                </x-slot>
+                Packages
+            </x-guardian-sidebar-nav-button>
+
         </x-guardian-sidebar-nav>
         <main class="main">
             {{ $slot  }}

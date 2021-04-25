@@ -2,9 +2,7 @@
     <div class="wrapper my-8">
         <div class="row flex">
             <div class="md-col-2 relative">
-                <div class="sticky">
-                    <img style="max-width: 100%" src="{{ asset('img/claude.svg') }}" alt="Claude Cartoon">
-                </div>
+                <x-left-sidebar></x-left-sidebar>
             </div>
             <div class="md-col-8">
                 <h1>Blog</h1>

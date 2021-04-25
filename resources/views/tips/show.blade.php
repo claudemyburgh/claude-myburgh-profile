@@ -2,22 +2,22 @@
     <div class="wrapper my-8">
         <div class="row flex">
             <div class="md-col-2 relative">
-                <div class="sticky">
-                    <img style="max-width: 200px" src="{{ asset('img/claude.svg') }}" alt="Claude Cartoon">
-                </div>
+                <x-left-sidebar></x-left-sidebar>
             </div>
             <div class="md-col-7">
                 <h1>Coding Tips</h1>
 
                 <div class="panel split-panel mb-5">
-                    <div class="panel__body">
-                        <h2 class="m-0 pb-5 gradient-text">{{ $tip->title }}</h2>
+                    <articel class="panel__body">
+                        <header>
+                            <h2 class="m-0 pb-5 gradient-text">{{ $tip->title }}</h2>
+                        </header>
                         {!! Str::of($tip->description)->markdown()  !!}
-                    </div>
-                    <div class="panel__footer">
+                    </articel>
+                    <footer class="panel__footer flex justify--between flex--align-center">
                         Posted: {{ $tip->created_at->diffForHumans() }}
                         <a href="{{ url()->previous() }}" class="btn btn--primary-gradient">BACK</a>
-                    </div>
+                    </footer>
                 </div>
 
                 <div class="row">

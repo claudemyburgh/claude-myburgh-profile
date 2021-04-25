@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class PostsRequest extends FormRequest
+class PackageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +24,10 @@ class PostsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:posts,title,' . $this->post?->id,
-//            'title' => ['required', Rule::unique('posts', 'title')->ignore($this->post)],
-            'description' => 'required',
-            'content' => 'required'
+            'vendor_name' => 'nullable|string|max:255',
+            'name' => 'required|unique:packages,name,' . $this->package?->id,
+            'description' => 'nullable',
+            'url' => 'required|url'
         ];
     }
 }

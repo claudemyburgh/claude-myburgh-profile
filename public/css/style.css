@@ -11412,6 +11412,33 @@ a.btn.btn--md {
   z-index: -1;
 }
 
+.panel__thumb {
+  position: relative;
+  transform: rotate(5deg);
+}
+.panel__thumb img {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+.panel__thumb::before {
+  position: absolute;
+  transform-origin: right bottom;
+  transition: all 0.15s ease;
+  width: 120px;
+  height: 120px;
+  content: "";
+  display: block;
+  background: linear-gradient(to bottom, #325a52, #2e1c52);
+  transform: translate(5px, 10px) rotate(3deg) translateZ(-10px) scale(0.95);
+  border: solid 2px var(--tri-color);
+  z-index: -1;
+  border-radius: 4px;
+}
+.panel__left {
+  flex-basis: calc(100% - 160px);
+}
+
 @supports (position: sticky) {
   .sticky {
     position: sticky;

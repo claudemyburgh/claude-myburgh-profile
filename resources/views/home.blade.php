@@ -8,29 +8,28 @@
                 <h2>I am freelance developer web designer and a author of
                     several open source packages</h2>
                 <div class="py-7 spacer">
-                    <a class="btn btn--mute-outline bg--dark btn--mute:hover" href="#">CHECK ME OUT ON GITHUB</a>
+                    <a class="btn btn--mute-outline bg--dark btn--mute:hover" href="https://github.com/DesignByCode" target="_blank">CHECK ME OUT ON GITHUB</a>
                 </div>
             </div>
         </div>
-    <pre>
 
+        <div class="row my-6 flex">
+            @foreach($packages as $p)
+                <div class="md-col-4">
+                    <div class="panel split-panel">
+                        <div class="panel__body">
+                            <h3><a href="{{ $p->url }}" target="_blank">{{ $p->name }}</a></h3>
+                            {{ $p->description }}
+                        </div>
+                        <div class="panel__footer flex justify--end">
+                            <a href="{{ $p->url }}" target="_blank" class="btn btn--primary btn--sm">View Package</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
-        @foreach($posts as $p)
-            <li>{{ $p->title }}</li>
-        @endforeach
-
-
-    </pre>
-{{--        <div class="row flex justify--center">--}}
-{{--            <div class="md-col-10">--}}
-{{--                <div class="row">--}}
-{{--                    <div id="repos"></div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
-
-
 
 
 </x-app-layout>

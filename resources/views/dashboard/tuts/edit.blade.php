@@ -1,20 +1,20 @@
-<x-guardian-layout type="dashboard" title="Create Post">
+<x-guardian-layout type="dashboard" title="Update Tip">
     <div class="wrapper my-8">
         <div class="row">
             <div class="md-col-12">
-                <h1>Update Tut</h1>
+                <h1>Update Tip</h1>
             </div>
         </div>
 
-        <div class="row justify--center ">
+        <div class="row">
             <div class="md-col-6">
-                <form action="{{ route('dashboard.tuts.update', $tut) }}" method="post">
+                <form action="{{ route('dashboard.tips.update', $tip) }}" method="post">
                     @csrf
                     @method('put')
                     <div class="form__group">
                         <label for="title" class="form__label">Title</label>
                         <div class="form__wrap @error('title') border--danger @enderror">
-                            <input type="text" id="title" name="title" value="{{ old('title') ?: $tut->title }}" class="form__item">
+                            <input type="text" id="title" name="title" value="{{ old('title') ?: $tip->title }}" class="form__item">
                         </div>
                         @error('title')
                         <small class="text--danger ">{{ $message }}</small>
@@ -23,14 +23,14 @@
                     <div class="form__group">
                         <label for="description" class="form__label">Description</label>
                         <div class="form__wrap @error('description') border--danger @enderror">
-                            <textarea name="description" id="description" cols="30" rows="3" class="form__item">{{old('description') ?: $tut->description}}</textarea>
+                            <textarea name="description" id="description" cols="30" rows="3" class="form__item">{{old('description') ?: $tip->description}}</textarea>
                         </div>
                         @error('description')
                         <small class="text--danger ">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form__group pt-5">
-                        <button class="btn btn--block btn--primary">Update Tut</button>
+                        <button class="btn btn--block btn--primary">Update Tip</button>
                     </div>
                 </form>
             </div>
@@ -38,9 +38,9 @@
 
         <div class="row">
             <div class="md-col-6">
-                @if($tut->media)
+                @if($tip->media)
                     <div class="row">
-                        @foreach($tut->media as $media)
+                        @foreach($tip->media as $media)
                             <div class="md-col-12 relative">
                                 <img width="100%" src="{{ $media->getUrl() }}" alt="image 1">
                                 <form method="post" action="{{ route('dashboard.tuts.delete', $media) }}">
@@ -54,7 +54,7 @@
                         @endforeach
                     </div>
                 @endif
-                <form action="{{ route('dashboard.tuts.upload', $tut) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('dashboard.tuts.upload', $tip) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form__group">
                         <label class="form__label">

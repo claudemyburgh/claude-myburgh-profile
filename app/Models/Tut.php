@@ -33,15 +33,17 @@ class Tut extends Model implements HasMedia
         return $this->belongsTo(User::class);
     }
 
-    public function registerAllMediaConversions(): void
+    public function registerMediaConversions(Media $media = null): void
     {
-        $this->addMediaCollection('tuts')
-            ->registerMediaConversions(function (Media $media) {
-                $this
-                    ->addMediaConversion('card')
-                    ->width(800)
-                    ->height(800);
-            });
+        $this->addMediaConversion('card')
+              ->width(800)
+              ->height(800)
+              ->sharpen(10);
+
+        $this->addMediaConversion('thumb')
+              ->width(150)
+              ->height(150)
+              ->sharpen(10);
     }
 
 
