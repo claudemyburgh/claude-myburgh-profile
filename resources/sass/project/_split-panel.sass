@@ -3,6 +3,10 @@
     position: relative
     transition: all 0.15s ease-in-out
     transform-origin: bottom
+    background: var(--dark-color)
+    display: flex
+    z-index: 2
+
     &::before
         position: absolute
         transform-origin: right bottom
@@ -20,6 +24,12 @@
     & .panel__header,
     & .panel__footer
         background: var(--dark-color)
+
+    & .panel__body
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
 
     &:hover
         transform: scale(1.01) translateZ(30px)
@@ -61,7 +71,8 @@
         background: rgba(#000, 0.1)
         padding: 3px 10px
         width: 100%
-        min-height: 26px
+        height: 26px
         border-left: var(--primary-color) 3px solid
         border-radius: 4px
         font-size: 12px
+        overflow: hidden

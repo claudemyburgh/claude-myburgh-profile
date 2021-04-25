@@ -15,11 +15,13 @@
 
         <div class="row my-6 flex">
             @foreach($packages as $p)
-                <div class="md-col-4">
+                <div class="md-col-4 flex">
                     <div class="panel split-panel">
-                        <div class="panel__body">
-                            <h3><a href="{{ $p->url }}" target="_blank">{{ $p->name }}</a></h3>
-                            {{ $p->description }}
+                        <div class="panel__body flex justify--between">
+                            <div>
+                                <h3><a href="{{ $p->url }}" target="_blank">{{ $p->name }}</a></h3>
+                                {{ $p->description }}
+                            </div>
                             @if($p->install)
                                 <pre class="panel__install"><code >{{ $p->install }}</code></pre>
                             @endif
