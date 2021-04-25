@@ -12,7 +12,7 @@ return [
     | If you add Email verification "verified", "password.confirm" just remember to add the necessary adjustments.
     | docs: https://laravel.com/docs/8.x/verification#model-preparation
     */
-    'middleware' => [],
+    'middleware' => ['verified'],
 
     /*
      |--------------------------------------------------------------------------
@@ -99,7 +99,20 @@ return [
             'type' => 'success',
             'message' => 'Post successfully created.',
         ],
+        'tut-successfully-created' => [
+            'type' => 'success',
+            'message' => 'Tut successfully created.'
+        ],
+        'tut-successfully-updated' => [
+            'type' => 'success',
+            'message' => 'Tut successfully updated.'
+        ],
+        'success' => [
+            'type' => 'success',
+            'message' => 'Success'
+        ]
     ])
+
 
 
 ];

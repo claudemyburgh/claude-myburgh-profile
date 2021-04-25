@@ -7,7 +7,6 @@
     <title>{{ $title . ' - ' .config('app.name') ?? config('app.name') }}</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/backend.js') }}" defer></script>
 </head>
 <body>
     <x-menu></x-menu>

@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "designbycode/guardian": "^1.2",
+        "designbycode/guardian": "^1.4.1",
         "designbycode/laravel-sluggable": "^1.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",

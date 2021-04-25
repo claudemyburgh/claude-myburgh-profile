@@ -2,13 +2,10 @@
     <div class="wrapper my-8">
         <div class="row">
             <div class="md-col-12">
-                <h1>Create Blog Post</h1>
+                <h1>Create Tut</h1>
             </div>
         </div>
-
-        <div id="create-post"></div>
-
-        <form action="{{ route('dashboard.posts.store') }}" method="post">
+        <form action="{{ route('dashboard.tuts.store') }}" method="post">
             <div class="row flex justify--center">
                 @csrf
                 <div class="md-col-6">
@@ -30,17 +27,8 @@
                             <small class="text--danger ">{{ $message }}</small>
                         @enderror
                     </div>
-                    <div class="form__group">
-                        <label for="content" class="form__label">Content</label>
-                        <div class="form__wrap @error('content') border--danger @enderror">
-                            <textarea name="content" id="content" cols="30" rows="10" class="form__item">{{ old('content') }}</textarea>
-                        </div>
-                        @error('content')
-                            <small class="text--danger ">{{ $message }}</small>
-                        @enderror
-                    </div>
                     <div class="form__group pt-5">
-                        <button class="btn btn--block btn--primary">Create Post</button>
+                        <button class="btn btn--block btn--primary">Create Tut</button>
                     </div>
                 </div>
             </div>

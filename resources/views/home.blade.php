@@ -12,13 +12,22 @@
                 </div>
             </div>
         </div>
-        <div class="row flex justify--center">
-            <div class="md-col-10">
-                <div class="row">
-                    <div id="repos"></div>
-                </div>
-            </div>
-        </div>
+    <pre>
+
+
+        @foreach($posts as $p)
+            <li>{{ $p->title }}</li>
+        @endforeach
+
+
+    </pre>
+{{--        <div class="row flex justify--center">--}}
+{{--            <div class="md-col-10">--}}
+{{--                <div class="row">--}}
+{{--                    <div id="repos"></div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 
 

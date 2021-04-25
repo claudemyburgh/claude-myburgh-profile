@@ -4,7 +4,6 @@
         <div class="row flex justify--center">
             <div class="md-col-8">
                 <h1>Post Index</h1>
-
                 <table>
                     <thead>
                         <tr>
@@ -23,10 +22,6 @@
                         @endforeach
                     </tbody>
                 </table>
-
-
-
-
             </div>
         </div>
     </div>

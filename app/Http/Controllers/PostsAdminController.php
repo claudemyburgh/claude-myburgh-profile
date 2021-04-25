@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostsRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -40,15 +41,10 @@ class PostsAdminController extends Controller
      * @param Request $request
      * @return string
      */
-    public function store(Request $request): string
+    public function store(PostsRequest $request)
     {
-        $request->validate([
-           'title' => 'required|unique:posts,title,id,' . $request->id,
-           'description' => 'required',
-           'content' => 'required'
-        ]);
         $post = $request->user()->posts()->create($request->only('title', 'description', 'content'));
-        return redirect()->route('dashboard.posts.edit', [$post])->withStatus('post-created-success');
+        return redirect()->route('dashboard.posts.edit', $post)->withStatus('post-created-success');
     }
 
     /**
@@ -72,24 +68,16 @@ class PostsAdminController extends Controller
         return view('dashboard.posts.edit', compact('post'));
     }
 
+
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param PostsRequest $request
+     * @param Post $post
+     * @return mixed
      */
-    public function update(Request $request, Post $post)
+    public function update(PostsRequest $request, Post $post)
     {
-        $request->validate([
-            'title' => 'required|unique:posts,title,' . $post->id,
-            'description' => 'required',
-            'content' => 'required'
-        ]);
-
         $post->update($request->only('title', 'description', 'content'));
-
-        return redirect()->back()->withStatus('post-updated-success');
+        return redirect()->route('dashboard.posts.edit', $post)->withStatus('post-updated-success');
     }
 
     /**
