@@ -25,7 +25,7 @@ class PackageRequest extends FormRequest
     {
         return [
             'vendor_name' => 'nullable|string|max:255',
-            'name' => 'required|unique:packages,name,' . $this->package?->id,
+            'name' => 'required|unique:packages,name,' . optional($this->package)->id,
             'description' => 'nullable',
             'url' => 'required|url'
         ];
