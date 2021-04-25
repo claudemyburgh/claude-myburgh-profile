@@ -20,6 +20,9 @@
                         <div class="panel__body">
                             <h3><a href="{{ $p->url }}" target="_blank">{{ $p->name }}</a></h3>
                             {{ $p->description }}
+                            @if($p->install)
+                                <pre class="panel__install"><code >{{ $p->install }}</code></pre>
+                            @endif
                         </div>
                         <div class="panel__footer flex justify--end">
                             <a href="{{ $p->url }}" target="_blank" class="btn btn--primary btn--sm">View Package</a>

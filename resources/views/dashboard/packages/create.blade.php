@@ -28,6 +28,15 @@
                     @enderror
                 </div>
                 <div class="form__group">
+                    <label for="install" class="form__label">Installation snippet</label>
+                    <div class="form__wrap @error('install') border--danger @enderror">
+                        <input type="text" id="install" name="install" value="{{ old('install') }}" class="form__item">
+                    </div>
+                    @error('install')
+                    <small class="text--danger ">{{ $message }}</small>
+                    @enderror
+                </div>
+                <div class="form__group">
                     <label for="description" class="form__label">Description</label>
                     <div class="form__wrap @error('description') border--danger @enderror">
                         <textarea name="description" id="description" cols="30" rows="3" class="form__item">{{old('description')}}</textarea>

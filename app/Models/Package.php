@@ -16,7 +16,8 @@ class Package extends Model
         'slug',
         'vendor_name',
         'description',
-        'url'
+        'url',
+        'install'
     ];
 
     /**

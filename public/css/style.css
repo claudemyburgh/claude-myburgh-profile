@@ -11438,6 +11438,15 @@ a.btn.btn--md {
 .panel__left {
   flex-basis: calc(100% - 160px);
 }
+.panel__install {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 3px 10px;
+  width: 100%;
+  min-height: 26px;
+  border-left: var(--primary-color) 3px solid;
+  border-radius: 4px;
+  font-size: 12px;
+}
 
 @supports (position: sticky) {
   .sticky {

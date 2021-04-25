@@ -27,7 +27,8 @@ class PackageRequest extends FormRequest
             'vendor_name' => 'nullable|string|max:255',
             'name' => 'required|unique:packages,name,' . optional($this->package)->id,
             'description' => 'nullable',
-            'url' => 'required|url'
+            'url' => 'required|url',
+            'install' => 'nullable'
         ];
     }
 }
